@@ -83,7 +83,7 @@ export default function Detail({ data }) {
         <Head>
             {
                 data !== undefined ?
-                    <title>PokeNext - {data.name.charAt(0).toUpperCase() + data.name.slice(1)}</title>
+                    <title>PokéNext - {data.name.charAt(0).toUpperCase() + data.name.slice(1)}</title>
                     :
                     ''
             }

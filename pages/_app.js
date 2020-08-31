@@ -6,7 +6,7 @@ function MyApp({ Component, pageProps }) {
   return (
     <>
       <Head>
-        <title>PokeNext</title>
+        <title>PokéNext</title>
         <link rel="icon" href="/favicon.ico" />
       </Head>
       <div className="container">

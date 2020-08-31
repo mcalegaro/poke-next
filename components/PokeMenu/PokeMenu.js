@@ -13,7 +13,7 @@ export default function PokeMenu() {
                                 // src='/pokeload2.gif' 
                                 src={LOADING}
                                 className={styles.pokeBall} />
-                        keNext</h1>
+                        kéNext</h1>
                     </div>
                 </a>
             </Link>

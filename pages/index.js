@@ -1,18 +1,18 @@
 import Link from 'next/link'
 
-export default function Home(props) {
+export default function Home() {
     return <>
         <Link href="/search/PokeSearch">
             <a>
                 <div className="card">
-                    Search your Pokemon
+                    Search your Pokémon
                 </div>
             </a>
         </Link>
         <Link href="/list/1">
             <a>
                 <div className="card">
-                    PokeList
+                    PokéList
                 </div>
             </a>
         </Link>
