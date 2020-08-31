@@ -13,17 +13,23 @@ export default function List() {
     const [list, setList] = useState([])
     const router = useRouter()
     const { id } = router.query
-    if (!isNaN(parseInt(id)) && parseInt(id) !== pageNumber) {
+
+    if (loading && !isNaN(parseInt(id)) && parseInt(id) !== pageNumber) {
         const pnInt = parseInt(id);
         setLoading(false)
         setPageNumber(pnInt)
         getList(pnInt).then(data => setList(data))
     }
 
-    const handlePageChange = (ev) => {
-        let newVal = ev.target.value
-        if (newVal < 0 || isNaN(newVal)) {
-            newVal = 0
+    const handlePageChange = (e) => {
+        setPageNumber(e.target.value)
+    }
+
+    const handleBlur = (e) => {
+        let newVal = pageNumber
+        setLoading(true)
+        if (newVal < 1 || isNaN(newVal)) {
+            newVal = 1
         } else if (newVal > list.count / PAGE_SIZE) {
             newVal = list.count / PAGE_SIZE
         }
@@ -31,27 +37,30 @@ export default function List() {
     }
 
     const handleNext = () => {
-        if (list.next !== null) {
-            // setLoading(true)
+        if (list.next === null) {
+            e.preventDefault()
+        } else {
+            setLoading(true)
         }
     }
 
-    const handlePrevious = () => {
-        if (list.previous !== null) {
-            // setLoading(true)
+    const handlePrevious = (e) => {
+        if (list.previous === null) {
+            e.preventDefault()
+        } else {
+            setLoading(true)
         }
     }
 
     const paging = () => {
         return <div className="subMenuFixed">
             <div id="paging" className={["", styles.paging].join(" ")}>
-                <Link href='/list/[page]' as={`/list/${pageNumber - 1}`}>
+                <Link href='/list/[id]' as={`/list/${pageNumber - 1}`}>
                     <a
                         onClick={handlePrevious}
                     >
                         <div className={[styles.button, list.previous === null ? "disabled" : ""].join(" ")}>
                             &lt;
-                        {/* <input type="button" name="btPrev">&lt;</input> */}
                         </div>
                     </a>
                 </Link>
@@ -59,13 +68,16 @@ export default function List() {
                     <h3>
                         Page&nbsp;
                         <input type="text"
-                            value={pageNumber ? pageNumber : ''}
+                            value={
+                                pageNumber
+                            }
+                            onBlur={handleBlur}
                             onChange={handlePageChange}
                             className={styles.input}
                         />
                     </h3>
                 </div>
-                <Link href='/list/[page]' as={`/list/${pageNumber + 1}`}>
+                <Link href='/list/[id]' as={`/list/${pageNumber + 1}`}>
                     <a
                         onClick={handleNext}
                     >
