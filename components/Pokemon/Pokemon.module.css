@@ -1,0 +1,55 @@
+.detailGrid {
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+}
+
+.detailTitle {
+  text-transform: capitalize;
+}
+
+.content {
+  display: inline-table;
+}
+
+.card {
+  border-color: transparent;
+}
+
+.card:hover {
+  color: inherit;
+  border-color: transparent;
+}
+
+.card :hover {
+  color: inherit;
+  border-color: transparent;
+}
+
+.row {
+  display: table-row;
+}
+
+.cell {
+  display: table-cell;
+  padding: 0.1rem;
+  margin: 10px;
+  text-align: left;
+  font-weight: normal;
+}
+
+.imgFront {
+  position: absolute;
+  top: 0;
+  left: 50%;
+  width: 100%;
+  height: auto;
+}
+
+.divImgFront {
+  position: relative;
+  width: 50%;
+  padding-top: 50%;
+  /* background: #ffa500; */
+  /* margin: auto; */
+}
