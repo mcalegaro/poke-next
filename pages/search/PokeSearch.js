@@ -5,13 +5,13 @@ import styles from './PokeSearch.module.css'
 import { useRouter } from 'next/router'
 export default function PokeSearch() {
 
-    const [key, setKey] = useState("")
+    const [key, setKey] = useState()
     const [loading, setLoading] = useState(false)
     const [result, setResult] = useState()
     const router = useRouter()
     const { pokeName } = router.query
 
-    if (pokeName !== undefined && key === "") {
+    if (pokeName !== undefined && key === undefined) {
         setKey(pokeName)
         setLoading(true)
     }
@@ -23,7 +23,8 @@ export default function PokeSearch() {
     }
 
     useEffect(() => {
-        if (key.length > 2) {
+        document.getElementById('key').focus()
+        if (key && key.length > 2) {
             if (loading) {
                 setLoading(false)
                 const searchByName = async () => {
@@ -55,7 +56,7 @@ export default function PokeSearch() {
         <form className="subMenuFixed" style={{ height: '60px' }} onSubmit={handleSubmit}>
             <div className="grid">
                 <label>Search name:&nbsp;
-                <input type="text" name="pokeName"
+                <input type="text" name="pokeName" id="key"
                         onChange={handleChange} autoFocus
                         value={key} className={styles.keySearch} />
                 </label>
