@@ -9,7 +9,8 @@ export default function Home() {
                 </div>
             </a>
         </Link>
-        <Link href="/list/1">
+        {/* <Link href="/list/1"> */}
+        <Link href='/list/[id]' as={`/list/1`} >
             <a>
                 <div className="card">
                     PokéList

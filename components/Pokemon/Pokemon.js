@@ -33,9 +33,9 @@ export default function Detail({ data }) {
                         :
                         '/pokeload.gif'
                 }
-                    className={styles.imgFront} />
+                    className={styles.imgFront} style={{maxWidth:'200px'}}/>
             </div>
-            <div>
+            <div className="grid">
                 <span><b>Abilities:&nbsp;</b></span>
                 {
                     data.abilities.map(({ ability: i }) => {

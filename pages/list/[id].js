@@ -4,17 +4,17 @@ import { useState } from "react";
 import Loading from '../../components/Loading/Loading';
 import PokeListComp from "../../components/PokeList/PokeListComp";
 import { BASE_URL, PAGE_SIZE } from "../../constants/ApiConstants";
-import styles from './PokeList.module.css';
+import styles from './List.module.css';
 
-export default function PokeList() {
+export default function List() {
 
     const [loading, setLoading] = useState(true)
     const [pageNumber, setPageNumber] = useState(null)
     const [list, setList] = useState([])
     const router = useRouter()
-    const { page } = router.query
-    if (!isNaN(parseInt(page)) && parseInt(page) !== pageNumber) {
-        const pnInt = parseInt(page);
+    const { id } = router.query
+    if (!isNaN(parseInt(id)) && parseInt(id) !== pageNumber) {
+        const pnInt = parseInt(id);
         setLoading(false)
         setPageNumber(pnInt)
         getList(pnInt).then(data => setList(data))
