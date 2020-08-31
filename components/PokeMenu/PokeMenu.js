@@ -1,6 +1,6 @@
 import styles from './PokeMenu.module.css'
 import Link from 'next/link'
-import { LOADING } from '../../components/PbLoading'
+// import { LOADING } from '../../components/PbLoading'
 
 export default function PokeMenu() {
     return (
@@ -10,8 +10,8 @@ export default function PokeMenu() {
                     <div>
                         <h1 className="a">P
                         <img
-                                // src='/pokeload2.gif' 
-                                src={LOADING}
+                                src='/pokeload2.gif' 
+                                // src={LOADING}
                                 className={styles.pokeBall} />
                         kéNext</h1>
                     </div>
