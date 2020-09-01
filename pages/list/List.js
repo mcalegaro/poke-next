@@ -22,12 +22,10 @@ export default function List() {
         setReFetch(true)
     }
 
-    // useEffect(() => {
     if (reFetch) {
         setReFetch(false)
         getList(id).then(data => setList(data))
     }
-    // })
 
     const handlePageChange = (e) => {
         e.preventDefault()
@@ -47,7 +45,7 @@ export default function List() {
         }
     }
 
-    const handleNext = () => {
+    const handleNext = (e) => {
         if (list.next === null) {
             e.preventDefault()
         }
