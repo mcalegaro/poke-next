@@ -16,6 +16,7 @@ export default function Detail() {
             const url = BASE_URL + '/' + id + '/'
             const res = await fetch(url)
             const data = await res.json()
+            console.log(data);
             setState(data)
         }
         if (id && loading) {

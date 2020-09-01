@@ -29,11 +29,11 @@ export default function Detail({ data }) {
             <div className={styles.divImgFront}>
                 <img src={
                     data.sprites.other['official-artwork'].front_default ?
-                        data.sprites.other['official-artwork'].front_default
-                        :
-                        '/pokeload.gif'
+                        data.sprites.other['official-artwork'].front_default :
+                        data.sprites.front_default ? data.sprites.front_default :
+                            '/pokeload.gif'
                 }
-                    className={styles.imgFront} style={{maxWidth:'200px'}}/>
+                    className={styles.imgFront} style={{ maxWidth: '200px' }} />
             </div>
             <div className="grid">
                 <span><b>Abilities:&nbsp;</b></span>
