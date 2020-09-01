@@ -44,11 +44,10 @@ export default function PokeSearch() {
 
     const handleSubmit = (e) => {
         e.preventDefault()
-        if (key.length < 3) {
+        if (key && key.length < 3) {
             alert('Type at least 3 chars.')
         } else {
-            console.log(e)
-            document.forms[0].submit()
+            setLoading(true)
         }
     }
 

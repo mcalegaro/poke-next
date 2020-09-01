@@ -23,7 +23,7 @@ export default function PokeCard({ name, url }) {
     })
 
     return <>
-        <Link href='/detail/[id]' as={`/detail/${id}`} >
+        <Link href={`/detail/Detail?id=${id}`} >
             <a>
                 <div className="card">
                     {
