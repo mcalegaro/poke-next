@@ -4,6 +4,7 @@ import Loading from '../../components/Loading/Loading'
 import NotFound from '../../components/NotFound/NotFound'
 import { BASE_URL } from '../../constants/ApiConstants'
 import Pokemon from '../../components/Pokemon/Pokemon'
+import Head from 'next/head'
 
 export default function Detail() {
     const router = useRouter()
@@ -26,14 +27,17 @@ export default function Detail() {
     })
 
     return <>
+        <Head >
+            <title>PokéNext - Pokémon Detail</title>
+        </Head>
         <div className={["grid"].join(" ")}>
             {
                 loading ?
                     <Loading />
                     : state === 'notFound' ?
-                    <NotFound/>
-                    :
-                    <Pokemon data={state} />
+                        <NotFound />
+                        :
+                        <Pokemon data={state} />
             }
         </div>
     </>

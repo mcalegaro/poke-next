@@ -54,7 +54,7 @@ a {
 }
 
 .title a {
-  color: #0070f3;
+  color: #c51919;
   text-decoration: none;
 }
 
@@ -117,8 +117,8 @@ a {
 .card:focus,
 .card:active,
 h1.a:hover {
-  color: #f30000;
-  border-color: #f30000;
+  color: #c51919;
+  border-color: #c51919;
 }
 
 .card h3 {
@@ -170,12 +170,12 @@ input {
 }
 
 input:hover {
-  border-color: red;
+  border-color: #c51919;
   border-width: 1px;
 }
 
 input::selection {
-  border-color: red;
+  border-color: #c51919;
   border-width: 1px;
 }
 

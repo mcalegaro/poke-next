@@ -1,8 +1,9 @@
+import { useRouter } from 'next/router'
 import { useEffect, useState } from "react"
 import PokeListComp from "../../components/PokeList/PokeListComp"
 import { BASE_URL } from "../../constants/ApiConstants"
 import styles from './PokeSearch.module.css'
-import { useRouter } from 'next/router'
+import Head from 'next/head'
 export default function PokeSearch() {
 
     const [key, setKey] = useState()
@@ -52,6 +53,9 @@ export default function PokeSearch() {
     }
 
     return <>
+        <Head>
+            <title>PokéNext - Search</title>
+        </Head>
         <form className="subMenuFixed" style={{ height: '60px' }} onSubmit={handleSubmit}>
             <div className="grid">
                 <label>Search name:&nbsp;

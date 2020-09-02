@@ -1,10 +1,11 @@
 import Link from 'next/link';
-import { useEffect, useState } from "react";
+import { useRouter } from 'next/router';
+import { useState } from "react";
 import Loading from '../../components/Loading/Loading';
 import PokeListComp from "../../components/PokeList/PokeListComp";
 import { BASE_URL, PAGE_SIZE } from "../../constants/ApiConstants";
 import styles from './List.module.css';
-import { useRouter } from 'next/router';
+import Head from 'next/head';
 
 export default function List() {
 
@@ -97,6 +98,9 @@ export default function List() {
     }
 
     return <>
+        <Head>
+            <title>PokéNext - List</title>
+        </Head>
         {
             list !== undefined ?
                 paging() :
